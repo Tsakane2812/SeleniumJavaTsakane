@@ -16,12 +16,18 @@ public class HomePage {
     @FindBy(id = "overview-hero")
     WebElement HomePageTitle_id;
 
+    @FindBy(id = "nav-btn-practice")
+    WebElement LearningMaterial_id;
+
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
 
     public void verifyHomePageIsDisplayed() {
-        new WebDriverWait(driver, Duration.ofSeconds(10)).until(visibilityOf(HomePageTitle_id));
         HomePageTitle_id.isDisplayed();
+    }
+
+    public void clickLearningMaterial() {
+        HomePageTitle_id.click();
     }
 }
